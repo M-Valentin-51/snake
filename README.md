@@ -12,6 +12,6 @@
 ```
 ***
 ## Instruction
-**Touche `espace` pour lancer la parti**
+**Touche `espace` pour lancer la parti,**
 **Touche `directionnel` pour ce déplacer**
 ***
