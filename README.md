@@ -1,5 +1,4 @@
-***
-*Création d'un snake avec canvas*
+***Création d'un snake avec canvas*
 ***
 ## installation 
  
