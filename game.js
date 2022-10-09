@@ -1,6 +1,6 @@
 const canva = document.getElementById('cvs');
 const ctx = canva.getContext('2d');
-canva.style.backgroundColor = "green";
+canva.style.background = "url('herbe.jpg')"
 
 // recupere la hauteur de largeur de l'écrant est definit le canvas
 var cW = document.body.clientWidth;
@@ -45,7 +45,7 @@ var pomme = []
 
 for(i=0 ;i < snake.length ; i++)
 {
-    ctx.fillStyle = 'blue'
+    ctx.fillStyle = '#274e13'
     ctx.fillRect(snake[i][0], snake[i][1], t,t)
 }
 
@@ -88,7 +88,7 @@ function draw()
 
     // efface le snak
     for (let i = 0; i < snake.length; i++) {
-        ctx.fillStyle = 'blue'
+        ctx.fillStyle = '#274e13'
         ctx.clearRect(snake[i][0],snake[i][1],t,t)
         
     }
@@ -113,7 +113,6 @@ function draw()
 
 function gameOver()
 {
-
     let bool = false;
 
     let snakeL = snake.length 
@@ -130,17 +129,13 @@ function gameOver()
 
         if(bool)
         {
-            clearInterval(i1)
-            var conf = confirm(`score = ${score} \n Voulez vous recommencer ?`)
-            alert(conf)
-            if(conf){
-                document.location.reload(true)
-            }else {window.close()}
-
-            break;
+        clearInterval(i1)
+        alert(`score = ${score} `)
+        document.location.reload(true)
+        break
         }
     }
-    //console.log(snakeL)
+    //alert(conf)
 
 }
 
@@ -164,12 +159,18 @@ function eat()
 
 function nourriture()
 {
+
+    let image = document.createElement('img')
+    image.src = "./pomme.jpeg";
+
+
     let nH = (Math.floor(Math.random()*(cH/20)))*20
     let nW = (Math.floor(Math.random()*(cW/20)))*20
     pomme = [nW,nH]
 
 
     setTimeout(function(){
-        ctx.fillStyle = 'red'
-        ctx.fillRect(nW,nH,t,t)},800)
+        /*ctx.fillStyle = 'red'
+        ctx.fillRect(nW,nH,t,t)},800)*/
+        ctx.drawImage(image , nW , nH , t , t)},800)
 }
